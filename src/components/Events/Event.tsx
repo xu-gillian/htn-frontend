@@ -18,29 +18,24 @@ const Event: React.FC<Props> = ({ event, login, onShowDetails }) => {
 
     return (
         <div className="card card-margin">
-            <div className="widget-49">
-                <div className="widget-49-title-wrapper">
-                    <div className="widget-49-date-primary">
-                        <span className="widget-49-date-day">{startDate.getDate()}</span>
-                        <span className="widget-49-date-month">{months[startDate.getMonth()]}</span>
-                        <span className="widget-49-pro-title">{startDate.getFullYear()}</span>
-                    </div>
-                    <div className="widget-49-meeting-info">
-                        <span className="widget-49-pro-title">{event.name}</span>
-                        <span className="widget-49-pro-title">{event.event_type}</span>
-                        <span className="widget-49-pro-title"><button className="seeDetails" onClick={() => { onShowDetails(); setEventId(event.id) }}>See Details</button></span>
-                    </div>
-                    <div className='test'></div>
-                    <span className="widget-49-meeting-time">{startDate.getHours()}:{startDate.getMinutes() === 0
-                        ? '00'
-                        : startDate.getMinutes()} {startDate.getHours() < 12 ? 'AM' : 'PM'} - {endDate.getHours()}:{endDate.getMinutes() === 0 ? '00'
-                            : endDate.getMinutes()} {endDate.getHours() < 12 ? 'AM' : 'PM'}</span>
-                </div>
+            <div className="date-wrapper">
+                <a className="date">{startDate.getDate()}</a>
+                <a className="date">{months[startDate.getMonth()]}</a>
+            </div>
+            <div className="information-wrapper">
+                <a className="information-name">{event.name}</a>
+                <a className="information-type">{event.event_type}</a>
+                <a ><button className="seeDetails" onClick={() => { onShowDetails(); setEventId(event.id) }}>See Details</button></a>
+
+            </div>
+            <div className="event-time">{startDate.getHours()}:{startDate.getMinutes() === 0
+                ? '00'
+                : startDate.getMinutes()} {startDate.getHours() < 12 ? 'AM' : 'PM'} - {endDate.getHours()}:{endDate.getMinutes() === 0 ? '00'
+                    : endDate.getMinutes()} {endDate.getHours() < 12 ? 'AM' : 'PM'}
             </div>
         </div>
 
     )
 }
-
 
 export default Event;

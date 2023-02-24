@@ -5,7 +5,6 @@ body {
 }
 
 button {
-    padding: 0;
     border: none;
     background: none;
 }
@@ -21,7 +20,7 @@ button:hover {
     color: rgb(216, 190, 235);
     cursor: pointer;
     text-decoration: underline;
-
+    padding: 20px 0 0 0;
 }
 
 .seeDetails:hover {
@@ -34,58 +33,51 @@ button:hover {
     margin: 20px 10%;
     border-radius: 20px;
     padding: 5px;
+    display: flex;
+    flex-direction: row;
 }
-
 
 .card-header:first-child {
     border-radius: calc(8px - 1px) calc(8px - 1px) 0 0;
 }
 
-.widget-49 .widget-49-title-wrapper {
+.event-time {
+    width: fit-content;
     display: flex;
-    align-items: center;
-    padding: 20px;
-}
-
-.widget-49 .widget-49-title-wrapper .widget-49-date-primary {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    background-color: #edf1fc;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    padding: 5px;
+    align-items: center;
 }
 
-.widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-day {
-    color: #4e73e5;
-    font-weight: 500;
-    font-size: 1.5rem;
-    line-height: 1;
-}
-
-.widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-month {
-    color: #4e73e5;
-    line-height: 1;
-    font-size: 1rem;
-    text-transform: uppercase;
-}
-
-.widget-49 .widget-49-title-wrapper .widget-49-meeting-info {
+.date-wrapper {
+    width: fit-content;
     display: flex;
     flex-direction: column;
-    margin-left: 1rem;
-    width: 78%;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    font-size: 40px;
 }
 
-.widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-pro-title {
-    color: #bbadf7;
-    font-size: 15px;
+.date {
+    text-shadow: 1px 1px 20px #fff, 1px 1px 20px #ccc;
 }
 
-.widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-meeting-time {
-    color: #B1BAC5;
-    font-size: 13px;
+.information-wrapper {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: calc(100% - 260px);
+}
+
+.information-name {
+    font-size: 30px;
+    color: rgb(116, 73, 225);
+    font-weight: bold;
+}
+
+.information-type {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: rgb(185, 168, 230);
 }
