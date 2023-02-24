@@ -1,6 +1,10 @@
 import React, { Fragment, MouseEvent } from 'react';
 import ReactDOM from 'react-dom';
-import '../css/DetailsModal.css';
+import '../../assets/css/DetailsModal.css';
+
+type BackdropProps = {
+    onClose: any;
+}
 
 type ModalOverlayProps = {
     children: any;
@@ -11,9 +15,9 @@ type DetailsModalProps = {
 };
 
 
-const Backdrop: React.FC = () => {
+const Backdrop: React.FC<BackdropProps> = (props) => {
     return (
-        <div className="backdrop"></div>
+        <div className="backdrop" onClick={props.onClose}></div>
     );
 }
 
@@ -28,10 +32,10 @@ const ModalOverlay: React.FC<ModalOverlayProps> = (props) => {
 const portalElement = document.getElementById('overlays')!;
 
 
-const DetailsModal: React.FC<DetailsModalProps> = (props, onClose) => {
+const DetailsModal: React.FC<DetailsModalProps> = (props) => {
     return (
         <Fragment>
-            {ReactDOM.createPortal(<Backdrop ></Backdrop>, portalElement)}
+            {ReactDOM.createPortal(<Backdrop onClose={props.onClose} ></Backdrop>, portalElement)}
             {ReactDOM.createPortal(<ModalOverlay>{props.children}</ModalOverlay>, portalElement)}
         </Fragment>
     )

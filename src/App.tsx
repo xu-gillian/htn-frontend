@@ -1,5 +1,5 @@
 import './App.css';
-import DisplayEvents from './components/DisplayEvents';
+import DisplayEvents from './components/MainPage';
 
 function App() {
 

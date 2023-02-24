@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Loader from './Loader';
-import Event from './Event';
-import '../css/DisplayEvents.css';
+import Event from './Events/Event';
+import '../assets/css/MainPage.css';
 import { TEvent } from '../types/Events.types';
-import Details from './Details';
+import Details from './Events/Details';
 import { EventIdProvider } from '../context/eventId-context';
+import NavBar from './NavBar';
 
 const DisplayEvents: React.FC = () => {
     const [events, setEvents] = useState([]);
@@ -25,7 +26,7 @@ const DisplayEvents: React.FC = () => {
     }, []) // check how many times this reloads
 
     // handle the login stuff here and the login page -> when login setPublicEvents
-    const handlerLogin = () => {
+    const loginHandler = () => {
         setLoggedin(!loggedin);
         if (loggedin) {
             setDisplayEvents(events);
@@ -47,17 +48,13 @@ const DisplayEvents: React.FC = () => {
     return (
         <EventIdProvider>
             {showEventDetails && <Details login={loggedin} onHideDetails={hideEventDetailsHandler} allEvents={events} onShowDetails={showEventDetailsHandler}></Details>}
+            <NavBar loginHandler={loginHandler} loginText={loginText}></NavBar>
             <div className="wrapper">
-                <button className="login" onClick={handlerLogin}>{loginText}</button>
-                <main className="page-main">
-                    <div>
-                        <h1>HACK THE NORTH</h1>
-                    </div>
-                </main>
+
+                <h1>HACK THE NORTH</h1>
             </div>
             <header>Events Page</header>
             {displayEvents.length > 0 ? displayEvents.map((individualEvent: TEvent) => <Event event={individualEvent} login={loggedin} onShowDetails={showEventDetailsHandler} />) : (<Loader />)}
-
         </EventIdProvider>
     );
 }

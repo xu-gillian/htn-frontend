@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { TEvent } from '../types/Events.types';
-import { useEventId } from '../context/eventId-context';
+import { TEvent } from '../../types/Events.types';
+import { useEventId } from '../../context/eventId-context';
 
 type RelatedEventProps = {
     allEvents: any;

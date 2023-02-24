@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import DetailsModal from "./DetailsModal";
-import classes from "../css/Details.module.css";
-import { TEvent } from "../types/Events.types";
+import classes from "../../assets/css/Details.module.css";
+import { TEvent } from "../../types/Events.types";
 import RelatedEvent from "./RelatedEvents";
-import { useEventId } from "../context/eventId-context";
+import { useEventId } from "../../context/eventId-context";
 
 type DetailsProps = {
     login: Boolean,
@@ -33,10 +33,13 @@ const Details: React.FC<DetailsProps> = (props) => {
             <div className={classes.event_type}>{eventDetail?.event_type}</div>
             <div className={classes.description}>{eventDetail?.description}</div>
 
-            <div className={classes.information}>
-                <div>Guest Speaker{eventDetail!?.speakers.length === 1 ? "" : "s"}:</div>
-                {eventDetail!?.speakers.length > 0 ? eventDetail?.speakers.map((speaker) => <span>{speaker.name}</span>) : (<div />)}
-            </div>
+            {eventDetail!?.speakers.length == 0
+                ? <div></div>
+                : <div className={classes.information}>
+                    <div>Guest Speaker{eventDetail!?.speakers.length === 1 ? "" : "s"}:</div>
+                    {eventDetail!?.speakers.length > 0 ? eventDetail?.speakers.map((speaker) => <span>{speaker.name}</span>) : (<div />)}
+                </div>
+            }
 
             <div>{props.login ? "" : "Follow the link below to the event!"}</div>
             <div><a href={props.login ? (eventDetail?.public_url) : (eventDetail?.private_url)}>{props.login ? (eventDetail?.public_url) : (eventDetail?.private_url)}</a></div>

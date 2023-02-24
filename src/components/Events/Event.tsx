@@ -1,7 +1,7 @@
 import React from 'react';
-import { TEvent } from '../types/Events.types';
-import "../css/Events.css";
-import { useEventId } from '../context/eventId-context';
+import { TEvent } from '../../types/Events.types';
+import "../../assets/css/Events.css";
+import { useEventId } from '../../context/eventId-context';
 
 type Props = {
     event: TEvent,
@@ -14,7 +14,7 @@ const Event: React.FC<Props> = ({ event, login, onShowDetails }) => {
     const { eventId, setEventId } = useEventId();
     const startDate = new Date(event.start_time);
     const endDate = new Date(event.end_time);
-    const months: String[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     console.log(event.public_url);
 

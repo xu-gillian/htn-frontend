@@ -1,0 +1,62 @@
+body {
+    background-image: linear-gradient(to bottom right, rgb(232, 235, 247), rgb(243, 230, 248));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+button {
+    background: none;
+    outline: none;
+    text-decoration: underline;
+    padding: 3px;
+}
+
+button:hover {
+    color: gray;
+}
+
+.header {
+    height: fit-content;
+}
+
+.nav-top {
+    padding: 20px 40px;
+    width: calc(100% - 80px);
+    top: 0;
+    position: fixed;
+    float: right;
+    background: transparent;
+}
+
+.nav-top.active {
+    padding: 7px 40px;
+    background: white;
+    transition-timing-function: ease-in;
+    transition: 1s;
+}
+
+.login {
+    padding: 10px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    border: 1px solid;
+    border-color: black;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.login:hover {
+    color: grey;
+}
+
+.wrapper {
+    height: 100vh;
+}
+
+.wrapper>* {
+    padding: 10px;
+}
