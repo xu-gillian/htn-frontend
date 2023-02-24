@@ -23,9 +23,12 @@ const Backdrop: React.FC<BackdropProps> = (props) => {
 
 const ModalOverlay: React.FC<ModalOverlayProps> = (props) => {
     return (
-        <div className="modal">
-            <div className="content">{props.children}</div>
+        <div className="modal-wrapper">
+            <div className="modal">
+                {props.children}
+            </div>
         </div>
+
     );
 }
 

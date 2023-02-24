@@ -8,25 +8,27 @@
     background-color: rgba(0, 0, 0, 0.75);
 }
 
+.modal-wrapper {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
 .modal {
-    position: fixed;
-    top: 20vh;
-    left: 5%;
-    width: 90%;
+    color: black;
     background-color: white;
-    padding: 1rem;
+    position: fixed;
+    width: 90%;
+    max-width: 700px;
+    height: auto;
     border-radius: 14px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 30;
     animation: slide-down 300ms ease-out forwards;
-}
-
-@media (min-width: 768px) {
-    .modal {
-        color: black;
-        width: 40rem;
-        left: calc(50% - 20rem);
-    }
+    padding: 30px;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
 }
 
 @keyframes slide-down {

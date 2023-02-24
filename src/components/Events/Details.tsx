@@ -4,6 +4,7 @@ import classes from "../../assets/css/Details.module.css";
 import { TEvent } from "../../types/Events.types";
 import RelatedEvent from "./RelatedEvents";
 import { useEventId } from "../../context/eventId-context";
+import DetailsTime from "./DetailsTime";
 
 type DetailsProps = {
     login: Boolean,
@@ -28,8 +29,10 @@ const Details: React.FC<DetailsProps> = (props) => {
         <DetailsModal onClose={props.onHideDetails}>
             <div className={classes.total}>
                 <span>{eventDetail?.name}</span>
-
             </div>
+
+            <DetailsTime startTime={eventDetail?.start_time} endTime={eventDetail?.end_time}></DetailsTime>
+
             <div className={classes.event_type}>{eventDetail?.event_type}</div>
             <div className={classes.description}>{eventDetail?.description}</div>
 
