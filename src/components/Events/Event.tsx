@@ -16,8 +16,6 @@ const Event: React.FC<Props> = ({ event, login, onShowDetails }) => {
     const endDate = new Date(event.end_time);
     const months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-    console.log(event.public_url);
-
     return (
         <div className="card card-margin">
             <div className="widget-49">
@@ -34,7 +32,8 @@ const Event: React.FC<Props> = ({ event, login, onShowDetails }) => {
                     </div>
                     <div className='test'></div>
                     <span className="widget-49-meeting-time">{startDate.getHours()}:{startDate.getMinutes() === 0
-                        ? '00' : startDate.getMinutes()} {startDate.getHours() < 12 ? 'AM' : 'PM'} - {endDate.getHours()}:{endDate.getMinutes() === 0 ? '00'
+                        ? '00'
+                        : startDate.getMinutes()} {startDate.getHours() < 12 ? 'AM' : 'PM'} - {endDate.getHours()}:{endDate.getMinutes() === 0 ? '00'
                             : endDate.getMinutes()} {endDate.getHours() < 12 ? 'AM' : 'PM'}</span>
                 </div>
             </div>

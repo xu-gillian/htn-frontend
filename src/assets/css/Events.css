@@ -1,7 +1,7 @@
 body {
-    background: #F4F7FD;
-    margin: 20px 0px;
-
+    /* background: #F4F7FD; */
+    margin: 20px 0p;
+    color: white;
 }
 
 button {
@@ -18,7 +18,7 @@ button:hover {
 .seeDetails {
     font-family: inherit;
     font-size: 15 px;
-    color: rgb(108, 105, 105);
+    color: rgb(216, 190, 235);
     cursor: pointer;
     text-decoration: underline;
 
@@ -30,10 +30,10 @@ button:hover {
 
 .card {
     border: 0;
-    box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
-    -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    box-shadow: 0px 0px 10px 0px #edf1fc;
+    margin: 20px 10%;
+    border-radius: 20px;
+    padding: 5px;
 }
 
 
@@ -81,7 +81,7 @@ button:hover {
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-pro-title {
-    color: #3c4142;
+    color: #bbadf7;
     font-size: 15px;
 }
 

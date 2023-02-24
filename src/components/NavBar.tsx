@@ -16,12 +16,13 @@ const NavBar: React.FC<NavBarProps> = (props) => {
             setNavColour(false);
         }
     }
-
     window.addEventListener('scroll', changeNavColour);
 
-    return (<div className={navColour ? 'nav-top active' : 'nav-top'}>
-        <button className="login" onClick={props.loginHandler}>{props.loginText}</button>
-    </div>);
+    return (
+        <div className={navColour ? 'nav-top active' : 'nav-top'}>
+            <button className="login" onClick={props.loginHandler}>{props.loginText}</button>
+        </div>
+    );
 }
 
 export default NavBar;

@@ -49,12 +49,16 @@ const DisplayEvents: React.FC = () => {
         <EventIdProvider>
             {showEventDetails && <Details login={loggedin} onHideDetails={hideEventDetailsHandler} allEvents={events} onShowDetails={showEventDetailsHandler}></Details>}
             <NavBar loginHandler={loginHandler} loginText={loginText}></NavBar>
-            <div className="wrapper">
-
+            <div className="wrapper" >
                 <h1>HACK THE NORTH</h1>
+                <p>SOME DATES</p>
+                <p>hihihiihiii</p>
             </div>
-            <header>Events Page</header>
-            {displayEvents.length > 0 ? displayEvents.map((individualEvent: TEvent) => <Event event={individualEvent} login={loggedin} onShowDetails={showEventDetailsHandler} />) : (<Loader />)}
+            <div className="title">Events Page</div>
+            <div>
+                {displayEvents.length > 0 ? displayEvents.map((individualEvent: TEvent) => <Event event={individualEvent} login={loggedin} onShowDetails={showEventDetailsHandler} />) : (<Loader />)}
+            </div>
+
         </EventIdProvider>
     );
 }
