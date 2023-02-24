@@ -1,0 +1,35 @@
+button {
+    background: none;
+    outline: none;
+    text-decoration: underline;
+    padding: 3px;
+}
+
+button:hover {
+    color: gray;
+}
+
+.login {
+    font-family: inherit;
+    font-size: 1.2rem;
+    border: 1px solid;
+    border-color: black;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.login:hover {
+    color: grey;
+}
+
+.wrapper {
+    height: 100vh;
+}
+
+.wrapper>* {
+    padding: 10px;
+}
