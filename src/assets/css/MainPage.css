@@ -63,6 +63,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow-x: scroll;
 }
 
 .title {
@@ -83,4 +84,20 @@ button:hover {
 
 .event-date {
     font-size: 35px;
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        height: 100vh;
+        background-image: url("../images/background.jpg");
+        background-size: cover;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        overflow-x: scroll;
+        padding: 0 75px;
+    }
 }
