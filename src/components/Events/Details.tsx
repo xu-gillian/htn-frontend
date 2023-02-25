@@ -14,11 +14,13 @@ type DetailsProps = {
     onShowDetails: any,
 };
 
+// displays the details of each event
 const Details: React.FC<DetailsProps> = (props) => {
     const [eventDetail, setEventDetail] = useState<TEvent>();
     const [error, setError] = useState([]);
     const { eventId, setEventId } = useEventId();
 
+    // fetches data based on the eventId they want to view
     useEffect(() => {
         fetch(`https://api.hackthenorth.com/v3/events/${eventId}`)
             .then(response => response.json())
@@ -28,7 +30,6 @@ const Details: React.FC<DetailsProps> = (props) => {
 
     return (
         <DetailsModal onClose={props.onHideDetails}>
-
             <div className="all-information">
                 <div>
                     <span>{eventDetail?.name}</span>

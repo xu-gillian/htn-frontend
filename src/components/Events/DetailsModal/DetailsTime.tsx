@@ -5,6 +5,7 @@ type DetailsTimeProps = {
     endTime: number | undefined,
 }
 
+// component of displaying details - the start and end time of the event
 const DetailsTime: React.FC<DetailsTimeProps> = (props) => {
     const startDate = new Date(props.startTime!);
     const endDate = new Date(props.endTime!);

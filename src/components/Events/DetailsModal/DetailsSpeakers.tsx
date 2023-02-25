@@ -6,6 +6,7 @@ type DetailsSpeakerType = {
     eventSpeakers: TSpeaker[] | undefined,
 }
 
+// component of displaying details - the the guest speakers
 const DetailsSpeaker: React.FC<DetailsSpeakerType> = (props) => {
     return (
         <div className="container">

@@ -15,6 +15,7 @@ const DisplayEvents: React.FC = () => {
     const [loggedin, setLoggedin] = useState(true); // have to set to true initially
     const [showEventDetails, setShowEventDetails] = useState(false);
 
+    // fetch all event data and store it into events 
     useEffect(() => {
         fetch('https://api.hackthenorth.com/v3/events')
             .then(response => response.json())
@@ -23,12 +24,12 @@ const DisplayEvents: React.FC = () => {
                 setDisplayEvents(res.filter((ev: TEvent) => ev.permission === "public"));
             })
             .catch(err => setError(err));
-    }, []) // check how many times this reloads
+    }, [])
 
+    // toggles the modal display for details on each event
     const showEventDetailsHandler = () => {
         setShowEventDetails(true);
     }
-
     const hideEventDetailsHandler = () => {
         setShowEventDetails(false);
     }

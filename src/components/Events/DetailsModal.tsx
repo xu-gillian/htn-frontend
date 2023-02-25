@@ -15,12 +15,14 @@ type DetailsModalProps = {
 };
 
 
+// behind the modal, if clicked the modal closes
 const Backdrop: React.FC<BackdropProps> = (props) => {
     return (
         <div className="backdrop" onClick={props.onClose}></div>
     );
 }
 
+// holds the details of each event
 const ModalOverlay: React.FC<ModalOverlayProps> = (props) => {
     return (
         <div className="modal-wrapper">
@@ -33,7 +35,6 @@ const ModalOverlay: React.FC<ModalOverlayProps> = (props) => {
 }
 
 const portalElement = document.getElementById('overlays')!;
-
 
 const DetailsModal: React.FC<DetailsModalProps> = (props) => {
     return (

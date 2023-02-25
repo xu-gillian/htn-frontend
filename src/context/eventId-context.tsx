@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// EventId-context: manages the eventId that the user wants to view
 type EventIdType = {
     eventId: number;
     setEventId: React.Dispatch<React.SetStateAction<number>>;

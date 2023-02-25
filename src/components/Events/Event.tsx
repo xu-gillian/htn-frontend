@@ -14,6 +14,7 @@ const Event: React.FC<Props> = ({ event, login, onShowDetails }) => {
     const { eventId, setEventId } = useEventId();
     const startDate = new Date(event.start_time);
     const endDate = new Date(event.end_time);
+    // respective month for array index
     const months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     return (

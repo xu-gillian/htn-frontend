@@ -9,13 +9,11 @@ type RelatedEventProps = {
     onHideDetails: any;
 }
 
+// displays all related events as a button
+// onClick - change the information that is displayed on the modal
 const RelatedEvent: React.FC<RelatedEventProps> = (props) => {
     const { eventId, setEventId } = useEventId();
     const event = props.allEvents.find((ev: TEvent) => ev.id === props.rid);
-
-    useEffect(() => {
-
-    }, [eventId])
 
     return (
         <div><button onClick={() => {

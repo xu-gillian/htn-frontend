@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// login state context - manages whether the use is logged in or not
 type LoginStateType = {
     loginState: boolean;
     setLoginState: React.Dispatch<React.SetStateAction<boolean>>;

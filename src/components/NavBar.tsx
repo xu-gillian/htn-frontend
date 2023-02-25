@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLoginState } from "../context/loginState-context";
 import { TEvent } from "../types/Events.types";
 
+// navigation component
 type NavBarProps = {
     allEvents: TEvent[],
     setDisplayEvents: any,
@@ -23,7 +24,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
     window.addEventListener('scroll', changeNavColour);
 
 
-    // handle the login stuff here and the login page -> when login setPublicEvents
+    // handle the login state here - when it changes, change which events are displayed
     const loginHandler = () => {
         setLoginState(!loginState);
         if (loginState) {
