@@ -1,5 +1,4 @@
 import React from "react";
-import { TEvent } from "../../types/Events.types";
 
 type DetailsTimeProps = {
     startTime: number | undefined,

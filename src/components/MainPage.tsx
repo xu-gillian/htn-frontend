@@ -50,9 +50,10 @@ const DisplayEvents: React.FC = () => {
             {showEventDetails && <Details login={loggedin} onHideDetails={hideEventDetailsHandler} allEvents={events} onShowDetails={showEventDetailsHandler}></Details>}
             <NavBar loginHandler={loginHandler} loginText={loginText}></NavBar>
             <div className="wrapper" >
-                <h1>HACK THE NORTH</h1>
-                <p>SOME DATES</p>
-                <p>hihihiihiii</p>
+                <a className="event-title">TECH</a>
+                <a className="event-title">CONFERENCE</a>
+                <p className="event-date">SOME DATES</p>
+                <p>Event description :{')'}</p>
             </div>
             <div className="title">Events Page</div>
             <div>

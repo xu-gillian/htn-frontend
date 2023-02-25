@@ -2,14 +2,6 @@ span+span {
     margin-left: 10px
 }
 
-.total {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin-top: 1rem;
-}
 
 .actions {
     text-align: right;
@@ -48,14 +40,15 @@ span+span {
     color: grey;
     font-size: 13px;
     margin-bottom: 1rem;
-
+    padding-bottom: 15px;
 }
 
 .description {
     text-indent: 2%;
+    padding-bottom: 20px;
 }
 
-.information {
+.related-events {
     display: flex;
     flex-direction: horizontal;
     padding: 15px 0;
@@ -64,4 +57,10 @@ span+span {
 .closeButton {
     margin-top: 1rem;
     float: right;
+}
+
+.all-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

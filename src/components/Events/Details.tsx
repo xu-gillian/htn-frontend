@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import DetailsModal from "./DetailsModal";
-import classes from "../../assets/css/Details.module.css";
+import "../../assets/css/Details.css";
 import { TEvent } from "../../types/Events.types";
 import RelatedEvent from "./RelatedEvents";
 import { useEventId } from "../../context/eventId-context";
-import DetailsTime from "./DetailsTime";
+import DetailsTime from "./DetailsModal/DetailsTime";
+import DetailsSpeaker from "./DetailsModal/DetailsSpeakers";
 
 type DetailsProps = {
     login: Boolean,
@@ -27,35 +28,30 @@ const Details: React.FC<DetailsProps> = (props) => {
 
     return (
         <DetailsModal onClose={props.onHideDetails}>
-            <div className={classes.total}>
-                <span>{eventDetail?.name}</span>
-            </div>
 
-            <DetailsTime startTime={eventDetail?.start_time} endTime={eventDetail?.end_time}></DetailsTime>
+            <div className="all-information">
+                <div>
+                    <span>{eventDetail?.name}</span>
+                    <DetailsTime startTime={eventDetail?.start_time} endTime={eventDetail?.end_time}></DetailsTime>
+                    <div className="event_type">{eventDetail?.event_type}</div>
 
-            <div className={classes.event_type}>{eventDetail?.event_type}</div>
-            <div className={classes.description}>{eventDetail?.description}</div>
+                    <div className="description">{eventDetail?.description}</div>
+                    <div>{props.login ? "" : "Follow the link below to the event!"}</div>
+                    <div><a href={props.login ? (eventDetail?.public_url) : (eventDetail?.private_url)}>{props.login ? (eventDetail?.public_url) : (eventDetail?.private_url)}</a></div>
 
-            {eventDetail!?.speakers.length == 0
-                ? <div></div>
-                : <div className={classes.information}>
-                    <div>Guest Speaker{eventDetail!?.speakers.length === 1 ? "" : "s"}:</div>
-                    {eventDetail!?.speakers.length > 0 ? eventDetail?.speakers.map((speaker) => <span>{speaker.name}</span>) : (<div />)}
+                    <div className="related-events">
+                        <div>Other Related Events: </div>
+                        {eventDetail!?.related_events.length > 0
+                            ? eventDetail?.related_events.map((rid) =>
+                                <RelatedEvent allEvents={props.allEvents} rid={rid} onShowDetails={props.onShowDetails} onHideDetails={props.onHideDetails}></RelatedEvent>)
+                            : (<div />)}
+                    </div>
                 </div>
-            }
 
-            <div>{props.login ? "" : "Follow the link below to the event!"}</div>
-            <div><a href={props.login ? (eventDetail?.public_url) : (eventDetail?.private_url)}>{props.login ? (eventDetail?.public_url) : (eventDetail?.private_url)}</a></div>
-
-            <div className={classes.information}>
-                <div>Other Related Events : </div>
-                {eventDetail!?.related_events.length > 0
-                    ? eventDetail?.related_events.map((rid) =>
-                        <RelatedEvent allEvents={props.allEvents} rid={rid} onShowDetails={props.onShowDetails} onHideDetails={props.onHideDetails}></RelatedEvent>)
-                    : (<div />)}
+                <DetailsSpeaker eventSpeakers={eventDetail?.speakers}></DetailsSpeaker>
             </div>
 
-            <div className={classes.closeButton}><button onClick={props.onHideDetails}>Close</button></div>
+            <div className="closeButton"><button onClick={props.onHideDetails}>Close</button></div>
         </DetailsModal>
     );
 };

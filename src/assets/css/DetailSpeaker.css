@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.speaker-image {
+    background-image: url("../images/headshot.jpg");
+    width: 30vh;
+    height: 30vh;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+.speakers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
