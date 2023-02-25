@@ -1,5 +1,5 @@
 body {
-    background: black;
+    background: linear-gradient(black 10%, rgb(23, 23, 23) 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
 }
